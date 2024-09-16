@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  background-color: black;
+}
+
+.imagenheader {
+  background-image: url('https://i.blogs.es/fff4ca/pizzas/1366_2000.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: contrast(75%);
+}
+
+.textoheader {
+  display:flex ;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+/* CARDS */
+
+.cardContainer {
+  width: 320px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid gray;
+  border-radius: 2%;
+  margin-top: 40px;
+
+}
+
+.imagenCard {
+  width: 318px;
+  border-radius: 2%;
+}
+
+.ingredientes p {
+  font-size: 13px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.botones button {
+  font-size: 12px;  
+  padding: 5px 10px;  
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: 100%;
+  padding: 0 60px;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
