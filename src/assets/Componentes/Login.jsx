@@ -6,7 +6,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [contraseña, setContraseña] = useState('');
     
-    //Estado para los errores
+    //Estado para los erroresS
     const [error, setError] = useState(false);
     
     //Función antes de enviar el formulario
