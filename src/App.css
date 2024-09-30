@@ -84,3 +84,28 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+/* REGISTER */
+
+.error {
+  padding: 10px;
+  color: white;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  }
+
+  .Register, .Login {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+
+  }
+
+  .alert {
+    color: red;
+    font-size: bold;
+  }
