@@ -6,7 +6,7 @@ const [email, setEmail] = useState('');
 const [contraseña, setContraseña] = useState('');
 const [confirmacionContraseña, setConfirmacionContraseña] = useState('');
 
-//Estado para los errores
+//Estado para los erroress
 const [error, setError] = useState(false);
 
 //para que se puedan verificar los caracteres dentro de un label se puede usar dentro de la function
