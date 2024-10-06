@@ -78,7 +78,7 @@ const Cart = () => {
                 </div>
             </div>
             <div className="p-4">
-                <h4 className="pt-2">Pizzas a llevar:</h4>
+                <h4 className="pt-2">Pizzas a llevar 🛒:</h4>
                 <ul>
                     {carrito.map(item => (
                         <li key={item.id}>
