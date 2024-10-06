@@ -8,7 +8,7 @@ const Cart = () => {
     useEffect(() => {
         const total = carrito
             .map(item => item.count * item.price)
-            .reduce((suma, iteracion) => suma + iteracion, 0);
+            .reduce((suma, iteracion) => suma + iteracion, 0); 
         setTotal(total);
     }, [carrito]);
 
