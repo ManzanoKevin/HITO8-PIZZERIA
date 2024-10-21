@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
-import pizzas from './pizzas';
 
 const Cart = () => {
+    const [pizzas, setPizzas] = useState([]); 
     const [carrito, setCarrito] = useState([]);
     const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        const fetchPizza = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/api/pizzas");
+                const data = await response.json();
+                setPizzas(data); 
+            } catch (error) {
+                console.error("Error fetching pizzas:", error);
+            }
+        };
+        fetchPizza();
+    }, []); 
 
     useEffect(() => {
         const total = carrito

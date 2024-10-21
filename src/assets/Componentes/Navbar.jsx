@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 const total = 25000;
@@ -22,43 +23,45 @@ return (
         <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-            <a className="nav-link active text-white border border-6 border-light rounded mx-2" aria-current="page" href="#">
+            <Link className="nav-link active text-white border border-6 border-light rounded mx-2" aria-current="page" to='/'>
                 🍕Home
-            </a>
+            </Link>
             </li>
-
             {/* {FUNCIÓN TERNARIA} */}
             {token ? (
             <>
                 <li className="nav-item mx-2">
-                <a className="nav-link text-white border border-6 border-light rounded" href="#">
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>
                     🔓 Profile
-                </a>
+                </Link>
                 </li>
                 <li className="nav-item mx-2">
-                <a className="nav-link text-white border border-6 border-light rounded" href="#">
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/logout'>
                     🔒 Logout
-                </a>
+                </Link>
                 </li>
             </>
             ) : (
             <>
                 <li className="nav-item mx-2">
-                <a className="nav-link text-white border border-6 border-light rounded" href="#">
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/login'>
                     🔐 Login
-                </a>
+                </Link>
                 </li>
                 <li className="nav-item mx-2">
-                <a className="nav-link text-white border border-6 border-light rounded" href="#">
+                <Link className="nav-link text-white border border-6 border-light rounded" to='register'>
                     🔐 Register
-                </a>
+                </Link>
+                </li>
+                <li className="nav-item mx-2">
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>
+                    👩‍💻 Profile
+                </Link>
                 </li>
             </>
             )}
         </ul>
-        <span className="navbar-text text-info">
-            🛒 Total: ${total.toLocaleString('es-CL')}
-        </span>
+            <Link to='Cart' className="navbar-text text-info" style={{ textDecoration: 'none' }}>🛒 Total: ${total.toLocaleString('es-CL')}</Link>
         </div>
     </div>
     </nav>
