@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from '../Componentes/Header'; 
 import CardPizza from '../Componentes/CardPizza';
+import { CartContext } from '../Context/CartContext';
 
 const Home = () => {
 
     const [pizza, setPizza] = useState([]);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         const fetchPizza = async () => {
@@ -25,7 +27,7 @@ const Home = () => {
             <div className='row justify-content-center' >
                 {pizza.map((pizza) => (
                     <div key={pizza.id} className="col-lg-4 col-md-6 col-sm-12 mb-5 d-flex">
-                        <CardPizza pizza={pizza} />
+                        <CardPizza pizza={pizza} addToCart={addToCart} />
                     </div>
                 ))}
             </div>        
