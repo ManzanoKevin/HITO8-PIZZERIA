@@ -36,9 +36,7 @@ return (
             {token ? (
             <>
                 <li className="nav-item mx-2">
-                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>
-                    🔓 Profile
-                </Link>
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>🔓 Profile</Link>
                 </li>
                 <li className="nav-item mx-2">
                 <button className="nav-link text-white border border-6 border-light rounded btn" onClick={logout}>🔒 Logout</button>
@@ -64,7 +62,7 @@ return (
             </>
             )}
         </ul>
-            <Link to='Cart' className="navbar-text text-info" style={{ textDecoration: 'none' }}>🛒 Total: ${total.toLocaleString('es-CL')}</Link>
+            <Link to='/cart' className="navbar-text text-info" style={{ textDecoration: 'none' }}>🛒 Total: ${total.toLocaleString('es-CL')}</Link>
         </div>
     </div>
     </nav>
