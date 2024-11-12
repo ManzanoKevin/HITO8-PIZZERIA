@@ -10,6 +10,36 @@ const Cart = () => {
         return cart.reduce((sum, pizza) => sum + pizza.price * pizza.quantity, 0);
     }, [cart]);
 
+    const handleCheckout = async () => {
+        if (!token) {
+            alert("Debes iniciar sesión para realizar la compra.");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:5000/api/checkouts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    cart: cart,
+                }),
+            });
+
+            if (response.ok) {
+                alert("Has realizado tu compra con éxito!");
+            } else {
+                const errorData = await response.json();
+                alert(errorData.message || "Error al procesar la compra.");
+            }
+        } catch (error) {
+            console.error("Error durante la compra:", error);
+            alert("Error en la conexión con el servidor.");
+        }
+    };
+
     return (
         <div className="cart-container row">
             {cart.length > 0 ? (
@@ -33,7 +63,7 @@ const Cart = () => {
                 <p>No tienes pizzas en el carrito aún.</p>
             )}
             <p><strong>Total:</strong> ${total.toLocaleString('es-CL')}</p>
-            <button className="btn btn-primary" disabled={!token}>Pagar</button>
+            <button className="btn btn-primary" onClick={handleCheckout} disabled={!token}>Pagar</button>
         </div>
     );    
 };

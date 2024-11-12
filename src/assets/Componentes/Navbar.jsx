@@ -5,9 +5,10 @@ import { UserContext } from '../Context/UserContext';
 
 const Navbar = () => {
     const { calculateTotal } = useContext(CartContext);
-    const { token, logout } = useContext(UserContext);
+    const { email, logout } = useContext(UserContext);
 
     const total = calculateTotal();
+    const token = email !== null; 
 
 
 return (
@@ -36,7 +37,7 @@ return (
             {token ? (
             <>
                 <li className="nav-item mx-2">
-                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>🔓 Profile</Link>
+                <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>🔓 {email}</Link>
                 </li>
                 <li className="nav-item mx-2">
                 <button className="nav-link text-white border border-6 border-light rounded btn" onClick={logout}>🔒 Logout</button>
