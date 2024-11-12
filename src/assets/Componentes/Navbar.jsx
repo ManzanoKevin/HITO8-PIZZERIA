@@ -7,8 +7,7 @@ const Navbar = () => {
     const { calculateTotal } = useContext(CartContext);
     const { email, logout } = useContext(UserContext);
 
-    const total = calculateTotal();
-    const token = email !== null; 
+    const total = calculateTotal(); 
 
 
 return (
@@ -34,7 +33,7 @@ return (
             </Link>
             </li>
             {/* {FUNCIÓN TERNARIA} */}
-            {token ? (
+            {email ? (
             <>
                 <li className="nav-item mx-2">
                 <Link className="nav-link text-white border border-6 border-light rounded" to='/profile'>🔓 {email}</Link>
